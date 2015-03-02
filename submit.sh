@@ -1,13 +1,13 @@
 #!/bin/bash --login
-set -x
+# set -x
 computation_name="$(whoami)-test"
-exec boltctrl --folder helloworld/ --name ${computation_name} \
-     --executable-name run.sh \
-     --client-arguments "--python-file helloworld/computation_example.py" \
-     --scheduler-address "mesos-1:11217"
+boltctrl --folder helloworld/ --name ${computation_name} \
+         --executable-name run.sh \
+         --client-arguments "--python-file helloworld/computation_example.py" \
+         --scheduler-address "mesos-1:11217"
 
 separator="######################################"
-
+echo -e "\n\n\n"
 echo ${separator}
 echo "Congratulations, you've now submitted a correct computation"
 echo ${separator}
